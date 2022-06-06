@@ -21,7 +21,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><i class="bi bi-instagram"></i>Instagram
+            <a class="navbar-brand" href="{% url 'home' %}"><i class="bi bi-instagram"></i>Instagram
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                       </form>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{% url 'home' %}">
                           <i class="bi bi-house-door-fill"></i>
                           <span class="sr-only">(current)</span></a>
                     </li>
@@ -52,6 +52,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="bi bi-compass"></i>  
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-heart"></i>    
                         </a>
                     </li>
                     <li class="nav-item dropdown">

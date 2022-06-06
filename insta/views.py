@@ -7,3 +7,8 @@ def home(request):
         'posts': Post.objects.all()
     }
     return render(request, 'insta/home.html', context)
+
+def about(request):
+    
+    
+    return render(request, 'insta/about.html')
