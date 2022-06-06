@@ -60,18 +60,36 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle"></i>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Profile</a>
                             <a class="dropdown-item" href="#">Saved</a>
                             <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="#">Switch Accounts</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                      </div>
+                            <a class="dropdown-item" href="#">Switch Accounts</a>
+                        </div>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">
+                            Logout   
+                        </a>
+                    </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">
+                                Login    
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">
+                                Register    
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>                      
