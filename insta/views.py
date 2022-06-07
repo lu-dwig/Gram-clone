@@ -1,6 +1,7 @@
 # from email.mime import image
 # from re import template
 
+# from turtle import title
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -16,7 +17,7 @@ def home(request):
 class PostListView(ListView):
     model = Post
     template_name = 'insta/home.html'
-    contxt_object_name = ' posts'
+    context_object_name = 'posts'
     ordering = ['-date_posted']
 
 
@@ -48,6 +49,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin ,UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
     model= Post
+    success_url= '/'
     
     def test_func(self):
         post = self.get_object()
@@ -55,7 +57,16 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
             return True
         return False
 
+def searchPhoto(request):
+    query = request.GET.get('query')
+    if query != None:
+        post= Post.objects.filter(title=query)
 
+    context = {
+        'post': post,
+        'title':'search post'
+    }
+    return render(request, 'insta/search.html', context)
  
 def about(request):
     

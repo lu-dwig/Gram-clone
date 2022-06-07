@@ -1,17 +1,29 @@
 {% extends "insta/base.html" %}
 {% block content %}
-    
-    <article class="media content-section">
-        <img class="rounded-circle article-img" style="height:50px" src="{{ object.author.profile.image.url }}">
-        <div class="media-body">
-            <img class=" article-img" src="{{ object.image.url }}">
-            <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.content }}</p>
-            <div class="article-metadata">
-                <a class="mr-2" href="#">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+    <div class ="card">
+        <!-- <article class="media content-section"> -->
+            <div class =card-hearder>
+                <img class="rounded-circle article-img" style="height:50px" src="{{ object.author.profile.image.url }}">
             </div>
-        </div>
-    </article>
-    
+            <div class="media-body text-center">
+                <div>
+                    <img class=" article-img" src="{{ object.image.url }}" style="width: 100%">
+                    <div class="engagement">
+                        <a href="#"><i class="bi bi-heart"></i></a>
+                        <a href="#"><i class="bi bi-comment"></i></a>
+                        <a href="#"><i class="far fa-share-square"></i></a>
+                        <a href="#"><i class="far fa-bookmark"></i></a>
+                    </div>
+                </div>
+                <h2 class="article-title">{{ object.title }}</h2>
+                <p class="article-content">{{ object.content }}</p>
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ object.author }}</a>
+                </div>
+                <div>
+                    <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                </div>
+            </div>
+        <!-- </article> -->
+    </div> 
 {% endblock content %}

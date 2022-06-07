@@ -31,10 +31,12 @@
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
+                        <form class="d-flex" action="{% url 'search' %}">
+                            <input class="form-control me-2" type="search"
+                              placeholder="search post" aria-label="Search"
+                              name="query" >
+                            <button class="btn btn-outline-info" type="submit">Search</button>
+                        </form>
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'home' %}">
                               <i class="bi bi-house-door-fill"></i>

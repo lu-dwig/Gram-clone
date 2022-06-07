@@ -1,0 +1,21 @@
+{% extends "insta/base.html" %}
+{% block content %}
+    <div class="row">
+        <h2 class="border-bottom">SEARCH PAGE</h2>
+        {% for photo in photos %}
+        <div class="col-md-4">
+            <div class="card my-2">
+                <img style='height: 250px;object-fit:cover;' src="{{photo.image.url}}" class="card-img-top" alt="photo image">
+                <div class="card-body">
+                    <p class="card-text">Category: {{photo.category.name}}</p>
+                </div>
+                <button type="button" class="btn btn-success mt-1 copy-btn"
+                    data-url="{% url 'photo' photo.id %}">copy image url</button>
+                <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm">view</a>
+            </div>
+        </div>
+        {% empty %}
+          <h3>No such category in the category data... Kindly  try all</h3>
+        {% endfor %}
+    </div>
+{% endblock content %}
