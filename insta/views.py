@@ -1,6 +1,6 @@
 from re import template
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 # Create your views here.
 
@@ -14,7 +14,15 @@ class PostListView(ListView):
     model = Post
     template_name = 'insta/home.html'
     contxt_object_name = ' posts'
+    ordering = ['-date_posted']
 
+
+class PostDetailView(DetailView):
+    model= Post
+
+
+class PostCreateView(DetailView):
+    model= Post
 def about(request):
     
     
