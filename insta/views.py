@@ -46,7 +46,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin ,UpdateView):
             return True
         return False
 
-class PostDeteteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
     model= Post
     
     def test_func(self):
