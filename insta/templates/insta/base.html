@@ -28,9 +28,11 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
 
+                
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
+                        {% if user.is_authenticated %}
                         <form class="d-flex" action="{% url 'search' %}">
                             <input class="form-control me-2" type="search"
                               placeholder="search post" aria-label="Search"
@@ -48,7 +50,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{% url 'post-create' %}">
                                 <i class="bi bi-plus-square"></i>
                             </a>
                         </li>
@@ -74,7 +76,6 @@
                                 <a class="dropdown-item" href="#">Switch Accounts</a>
                             </div>
                         </li>
-                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">
                                 Logout   
@@ -100,7 +101,7 @@
     </header> 
     <main role="main" class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-12">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -110,18 +111,18 @@
             {% endif %}
             {% block content %}{% endblock %}
           </div>
-          <div class="col-md-4">
-            <div class="content-section">
-                <h3>Suggestions</h3>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-light">Latest Posts</li>
-                    <li class="list-group-item list-group-item-light">Announcements</li>
-                    <li class="list-group-item list-group-item-light">Calendars</li>
-                    <li class="list-group-item list-group-item-light">etc</li>
-                </ul>
-
-            </div>
-          </div>
+          <!-- <div class="col-md-4"> -->
+            <!-- <div class="content-section"> -->
+                <!-- <h3>Suggestions</h3> -->
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item list-group-item-light">Latest Posts</li> -->
+                    <!-- <li class="list-group-item list-group-item-light">Announcements</li> -->
+                    <!-- <li class="list-group-item list-group-item-light">Calendars</li> -->
+                    <!-- <li class="list-group-item list-group-item-light">etc</li> -->
+                <!-- </ul> -->
+<!--  -->
+            <!-- </div> -->
+          <!-- </div> -->
         </div>
     </main>
 

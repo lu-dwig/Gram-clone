@@ -60,10 +60,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
 def searchPhoto(request):
     query = request.GET.get('query')
     if query != None:
-        post= Post.objects.filter(title=query)
+        post= Post.objects.filter(title__contains='spice')
 
     context = {
-        'post': post,
+        'posts': post,
         'title':'search post'
     }
     return render(request, 'insta/search.html', context)
