@@ -28,7 +28,7 @@ SECRET_KEY = '0k+t7_=#aouv$ars(-%ja&_li=^@0g#ci()k7d0=!)a7)ls88h'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'fast-ridge-41169.herokuapp.com'
+    'https://git.heroku.com/fast-ridge-41169.git'
 ]
 
 
