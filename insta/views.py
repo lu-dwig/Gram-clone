@@ -57,6 +57,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin ,DeleteView):
             return True
         return False
 
+
 def searchPhoto(request):
     query = request.GET.get('query')
     if query != None:
