@@ -68,7 +68,3 @@ def searchPhoto(request):
     }
     return render(request, 'insta/search.html', context)
  
-def about(request):
-    
-    
-    return render(request, 'insta/about.html')
