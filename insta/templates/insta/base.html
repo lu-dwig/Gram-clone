@@ -56,11 +56,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i class="bi bi-compass"></i>  
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
                                 <i class="bi bi-heart"></i>    
                             </a>
                         </li>
@@ -70,8 +65,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                                <a class="dropdown-item" href="#">Saved</a>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="">Saved</a>
+                                <a class="dropdown-item" href="{% url 'settings' %}">Settings</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Switch Accounts</a>
                             </div>
@@ -101,7 +96,7 @@
     </header> 
     <main role="main" class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-xs-1" align="center">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -109,6 +104,7 @@
                     </div>
                 {% endfor %}
             {% endif %}
+            
             {% block content %}{% endblock %}
           </div>
           <!-- <div class="col-md-4"> -->
