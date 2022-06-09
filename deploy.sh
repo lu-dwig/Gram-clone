@@ -1,5 +1,5 @@
 git switch master
-# python manage.py collectstatic
+python manage.py collectstatic
 # heroku config:set ALLOWED_HOSTS=agile-gorge-70085.herokuapp.com
 # heroku config:set DEBUG=False
 # heroku config:set DISABLE_COLLECTSTATIC=1
