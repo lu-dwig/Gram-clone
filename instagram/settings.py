@@ -14,8 +14,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # ALLOWED_HOSTS = ['jango-galleria.herokuapp.com', 'localhost']
 # Application definition
 
-
-
+DEBUG = True
+ALLOWED_HOSTS = [
+    'agile-gorge-70085.herokuapp.com' 
+    '127.0.0.1'
+]
 # Application definition
 
 INSTALLED_APPS = [
