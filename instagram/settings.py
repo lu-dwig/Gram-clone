@@ -28,7 +28,8 @@ SECRET_KEY = '0k+t7_=#aouv$ars(-%ja&_li=^@0g#ci()k7d0=!)a7)ls88h'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'agile-gorge-70085.herokuapp.com' 
+    'agile-gorge-70085.herokuapp.com', 
+    '127.0.0.1'
 ]
 
 
